@@ -1,0 +1,11 @@
+Thanks for using this :)
+
+Couple things you need to know:
+when it first boots up, it creates a folder "/plugins/DQSData"
+Inside that folder will be a file named "config.txt"
+To set a delay on a command, put this in the config
+
+<cmd> <time (milliseconds>
+
+So if you wanted to delay the time between teleports to 5 seconds, you'd do
+tp 5000
