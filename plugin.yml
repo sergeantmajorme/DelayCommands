@@ -1,5 +1,4 @@
 name: DQS
 main: me.SgtMjrME.DQS.DQS
-version: 0.01
-description: Stops spam of serverSigns
-depends: ServerSigns
+version: 1.00
+description: Cooldown on any player command.

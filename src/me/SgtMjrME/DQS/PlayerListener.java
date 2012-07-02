@@ -18,17 +18,19 @@ public class PlayerListener implements Listener{
 	@EventHandler (priority = EventPriority.HIGHEST)
 	public void PlayerEvent(PlayerCommandPreprocessEvent e)
 	{
-		if (e.getPlayer().isOp())
-		{
-			return;
-		}
-		if (plugin.checkDelay(e.getPlayer().getName()) && e.getMessage().split(" ")[0].equalsIgnoreCase("/quests"))
+//		if (e.getPlayer().isOp())
+//		{
+//			return;
+//		}
+		if (plugin.checkDelay(e.getPlayer().getName()))
 		{
 			e.setCancelled(true);
 			return;
 		}
-		plugin.addDelay(e.getPlayer().getName());
-		Timer t = new Timer();
-		t.schedule(new DelayTask(e.getPlayer().getName(), plugin), 5000);
+		else if (plugin.checkCommand(e.getMessage().split(" ")[0])){
+			plugin.addDelay(e.getPlayer().getName());
+			Timer t = new Timer();
+			t.schedule(new DelayTask(e.getPlayer().getName(), plugin), plugin.giveTime(e.getMessage().split(" ")[0]));
+		}
 	}
 }
