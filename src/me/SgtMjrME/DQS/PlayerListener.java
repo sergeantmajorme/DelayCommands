@@ -15,7 +15,7 @@ public class PlayerListener implements Listener{
 		plugin = dqs;
 	}
 	
-	@EventHandler (priority = EventPriority.HIGHEST)
+	@EventHandler (priority = EventPriority.LOWEST)
 	public void PlayerEvent(PlayerCommandPreprocessEvent e)
 	{
 		if (e.isCancelled())
