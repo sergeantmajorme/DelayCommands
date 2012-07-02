@@ -18,10 +18,12 @@ public class PlayerListener implements Listener{
 	@EventHandler (priority = EventPriority.HIGHEST)
 	public void PlayerEvent(PlayerCommandPreprocessEvent e)
 	{
-//		if (e.getPlayer().isOp())
-//		{
-//			return;
-//		}
+		if (e.isCancelled())
+			return; //Because I got angry, why I'm making this plugin >:(
+		if (e.getPlayer().isOp())
+		{
+			return;
+		}
 		if (plugin.checkDelay(e.getPlayer().getName()))
 		{
 			e.setCancelled(true);
